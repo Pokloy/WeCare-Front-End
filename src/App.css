@@ -1,0 +1,250 @@
+/* CSS Reset by Eric Meyer v2.0 (http://meyerweb.com/eric/tools/css/reset/) */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-family: "Poppins", sans-serif;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.navbar-bg{
+  background-color: #9ec7cf;
+}
+.font-white{
+  color:white;
+}
+.background1{
+  background-color: #b0d6d3;
+  height: 86vh;
+}
+.login-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-box h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #5a6268;
+}
+
+.form-control {
+  border-radius: 25px;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.btn-login {
+  border-radius: 25px;
+  padding: 0.7rem;
+  background-color: #63cdda;
+  color: white;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.btn-login:hover {
+  background-color: #56c3c4;
+}
+
+.form-text {
+  text-align: right;
+}
+
+.form-text a {
+  color: #63cdda;
+}
+
+.form-text a:hover {
+  color: #56c3c4;
+}
+
+.signup-text {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.signup-text a {
+  color: #63cdda;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  color: #56c3c4;
+}
+
+
+.text-blue{
+  color:#6bb8b8;
+}
+.h1-font-size{
+  font-size: 2rem;
+}
+.backgroundHome{
+  background-color: #b0d6d3;
+  height: 86vh;
+  display: flex;
+  align-items: center;
+}
+.elderly-img{
+  width: 500px;
+  height: auto;
+}
+
+.speech-bubble {
+  position: relative;
+  background-color: white; /* Gray background color */
+  width: 500px; /* Adjust the width as needed */
+  height: auto; /* Adjust the height as needed */
+  border-radius: 10px; /* Rounded corners */
+  padding: 4rem;
+  z-index: 0;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  right: -20px; /* Position the triangle on the right */
+  top: 100px; /* Adjust the vertical position of the triangle */
+  width: 0;
+  height: 0;
+  border-left: 20px solid white; /* Same color as the speech bubble */
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.square-place-holder{
+  background-color: #98cabe;
+  height: auto;
+  width: 10rem;
+}
+
+
+.icon-custom{
+  color:white;
+  font-size: 5rem;
+}
+
+.side-menu-container{
+  background-color: #a6d0da;
+  height: 100vh;
+  width: 15%;
+  padding: .50rem;
+}
+.custom-container{
+  height: 100vh;
+  width: 90%;
+}
+
+.z-index-0{
+  z-index: 0;
+}
+
+.z-index-1{
+  z-index: 1;
+}
+
+.display-none-laptop-screen{
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .display-none-smartphone{
+    display: none;
+  }
+  .backgroundHome{
+    background-color: white;
+ }
+ .font-blue-color{
+  color: #5895aa;
+ }
+  .small-d-flex{
+    display: flex;
+    flex-direction: column;
+  }
+  .small-justify-center{
+    justify-content: center;
+    align-items: center
+  }
+  .smart-phone-h1-weight{
+    font-weight: 600;
+  }
+  .smart-phone-h1-size{
+    font-size: 2rem;
+  }
+  .smart-phone-p-size{
+    font-size: 1.4rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.test1{
+  background-color: red;
+}
+.test2{
+  background-color: blue;
+}
