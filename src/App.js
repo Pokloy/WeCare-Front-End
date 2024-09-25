@@ -3,12 +3,18 @@ import "./App.css";
 import AppNavbar from "./components/AppNavbar";
 import AppFooter from "./components/AppFooter";
 
-import Login from "./pages/Login";
-import Home from "./pages/Home";
-import Home2 from "./pages/Home2";
-import Registration1 from "./pages/Registration1";
-import Registration2 from "./pages/Registration2";
-import Registration3 from "./pages/Registration3";
+import AppNavbar from './components/AppNavbar';
+
+import Login from './pages/Login';
+import Home from './pages/Home';
+import Home2 from './pages/Home2';
+import Registration1 from './pages/Registration1';
+import Registration2 from './pages/Registration2';
+import Registration3 from './pages/Registration3';
+
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+
 
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
