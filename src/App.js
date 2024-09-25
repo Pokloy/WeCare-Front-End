@@ -2,7 +2,6 @@ import './App.css';
 
 
 import AppNavbar from './components/AppNavbar';
-import AppFooter from './components/AppFooter';
 
 import Login from './pages/Login';
 import Home from './pages/Home';

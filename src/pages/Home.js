@@ -14,9 +14,27 @@ export default function Home(){
                             <div>
                                 <h3 className="text-blue mb-4">for those who cared for us</h3>
                             </div>
-                            <div>
-                                <button type="submit" className="btn btn-login">Get Started</button>
+
+
+
+
+
+                            <div className="d-flex">
+ 
+                                <div>                                    
+                                    <button type="submit" className="btn-get-started btn-custom-size">Get Started</button>
+                                </div>
+
+                                <div className="ml-auto">
+                                    <div className="dot"></div>
+                                    <div className="dot"></div>
+                                </div>
+
                             </div>
+
+
+
+                            
                         </div>
                     </div>
 
@@ -31,12 +49,17 @@ export default function Home(){
 
         
             <div className="small-d-flex small-justify-center display-none-laptop-screen backgroundHome align-items-center">
-                        <div className="">
+                        <div className="mt-5">
                             <img src="./wecare_logo_smartphone.png" alt="We Care" width="300px" height="auto" />
                             <h1 className='mt-5 font-blue-color text-start smart-phone-h1-weight smart-phone-h1-size'>WeCare</h1>
                         </div>
                         <p className="font-blue-color smart-phone-p-size text-start">For those who cared for us</p>
-                        <button type="submit" className="btn btn-login">Get Started</button>
+                        <div className="loader">
+                          <div className="dot"></div>
+                            <div className="dot"></div>
+                        </div>
+
+                        <button type="submit" className="btn btn-login smart-phone-btn-size d-flex align-items-center justify-content-center ">Get Started</button>
             </div>
             </>
     )
