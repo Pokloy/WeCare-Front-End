@@ -1,5 +1,7 @@
-import './App.css';
+import "./App.css";
 
+import AppNavbar from "./components/AppNavbar";
+import AppFooter from "./components/AppFooter";
 
 import AppNavbar from './components/AppNavbar';
 
@@ -14,17 +16,20 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
 
 
+import { BrowserRouter as Router } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+
 function App() {
   return (
     <Router>
       <AppNavbar />
       <Routes>
-        <Route path="/home" element={<Home/>}/>
-        <Route path="/welcome" element={<Home2/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/registration1" element={<Registration1/>}/>
-        <Route path="/registration2" element={<Registration2/>}/>
-        <Route path="/registration3" element={<Registration3/>}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/welcome" element={<Home2 />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/registration1" element={<Registration1 />} />
+        <Route path="/registration2" element={<Registration2 />} />
+        <Route path="/registration3" element={<Registration3 />} />
       </Routes>
     </Router>
   );
