@@ -1,8 +1,9 @@
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import { Link, NavLink } from 'react-router-dom';
-import Nav from 'react-bootstrap/Nav';
-import { useState } from 'react';
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import { Link, NavLink } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
+import { useState } from "react";
+
 
 
 export default function AppNavbar({ isSidebarOpen }) {
@@ -66,6 +67,7 @@ export default function AppNavbar({ isSidebarOpen }) {
         </div>
         </>
     );
+
 }
 
 
