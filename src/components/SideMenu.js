@@ -11,7 +11,7 @@ export default function SideMenu({ isOpen, setIsOpen }) {
             <div className="hamburger" onClick={toggleMenu}>
                 <span className="material-symbols-outlined">menu</span>
             </div>
-
+ 
             {/* Sidebar */}
             <div className={`sidebar ${isOpen ? 'open' : ''}`}>
                 <div className="logo my-4 text-center">
