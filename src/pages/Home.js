@@ -22,12 +22,15 @@ export default function Home(){
                             <div className="d-flex">
  
                                 <div>                                    
-                                    <button type="submit" className="btn-get-started btn-custom-size">Get Started</button>
+                                <a href="/registration1" type="submit" className="btn-get-started btn-custom-size">Get Started</a>
                                 </div>
 
                                 <div className="ml-auto">
                                     <div className="dot"></div>
-                                    <div className="dot"></div>
+
+                                    <a href="/welcome">
+                                    <div className="dot dot-dif-color"></div>
+                                    </a>
                                 </div>
 
                             </div>

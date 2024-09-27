@@ -1,4 +1,4 @@
-import Container from "react-bootstrap/Container";
+
 import Navbar from "react-bootstrap/Navbar";
 import { Link, NavLink } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
@@ -7,9 +7,18 @@ import { useState } from "react";
 
 
 export default function AppNavbar({ isSidebarOpen }) {
+
+  // Initialize the 'expanded' state with false
+  const [expanded, setExpanded] = useState(false);
+
+  // A function to toggle the state
+  const toggleExpanded = () => {
+    setExpanded(!expanded);
+  };
+
     return (
         <>
-           {/* <Navbar expand="lg" expanded={expanded}>
+         <Navbar expand="lg" expanded={expanded} className="navbar-bg">
 
                 <Navbar.Brand as={Link} to="/">
                     <div className="d-flex align-items-center">
@@ -42,10 +51,16 @@ export default function AppNavbar({ isSidebarOpen }) {
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
-            </Navbar> */}
+            </Navbar> 
+
+        </>
+    );
+
+}
 
 
-        <div className='ml-5 mt-2 d-flex'>
+
+        {/* <div className='ml-5 mt-2 d-flex'>
             <div className=''>
                 <h1 className='h1-authencated'>Home</h1>
             </div>
@@ -64,13 +79,7 @@ export default function AppNavbar({ isSidebarOpen }) {
                     account_circle
                 </span>
             </div>
-        </div>
-        </>
-    );
-
-}
-
-
+        </div> */}
 
 
 
