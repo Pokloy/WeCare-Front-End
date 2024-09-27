@@ -1,6 +1,27 @@
+
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
+import { getRegisteredData } from "../store/registration_action";
 
 export default function Registration2() {
+  const dispatch = useDispatch();
+
+  const [initialData,setInitialData] = useState({
+    firstname:"",
+    contactNumber:"",
+    birthDate: ""
+  })
+
+  const data = useSelector(state=>state.registration);
+
+  function collectData(e){  
+    
+    setInitialData({...initialData,[e.target.name]:e.target.value });
+    
+    console.log({...data,...initialData});
+    dispatch(getRegisteredData({...data,...initialData}));
+  }
   return (
     <div className="background1">
       <div className="login-container">
@@ -27,14 +48,17 @@ export default function Registration2() {
               />
             </div>
             <div className="form-group">
-              <label for="password" className="pb-3">
+              <label for="firstname" className="pb-3">
                 Display Name
               </label>
               <input
-                type="password"
+                type="text"
                 className="form-control"
-                id="password"
+                id="firstname"
                 placeholder="Enter Display Name"
+                name="firstname"
+                value={initialData.firstname}
+                onChange={collectData}
               />
             </div>
             <div className="form-group">
@@ -42,17 +66,27 @@ export default function Registration2() {
                 Contact No.
               </label>
               <input
-                type="password"
+                type="text"
                 className="form-control"
-                id="password"
-                placeholder="Re Enter Password"
+                id="contactNumber"
+                placeholder="Enter Contact Number"
+                name="contactNumber"
+                value={initialData.contactNumber}
+                onChange={collectData}
               />
             </div>
             <div className="form-group">
-              <label for="password" className="pb-3">
+              <label htmlFor="birthDate" className="pb-3">
                 Birthday.
               </label>
-              <input type="date" id="start" name="trip-start" />
+              <input type="date" id="start" 
+              name="birthDate" 
+               value={initialData.birthDate}
+               onChange={collectData}
+               onFocus={collectData}
+            
+               />
+              
             </div>
             <Link as={NavLink} to="/registration3" className="btn btn-login">
               Next

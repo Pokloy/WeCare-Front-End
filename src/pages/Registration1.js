@@ -1,6 +1,23 @@
+import { useDispatch } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
+import { getRegisteredData } from "../store/registration_action";
+import { useState } from "react";
 
 export default function Registration1() {
+
+  const dispatch = useDispatch();
+
+  const [initialData,setInitialData] = useState({
+    email:"",
+    password:""
+  })
+
+  function collectData(e){  
+    setInitialData({...initialData,[e.target.name]:e.target.value });
+
+    dispatch(getRegisteredData(initialData));
+  }
+
   return (
     <div className="background1">
       <div className="login-container">
@@ -20,6 +37,9 @@ export default function Registration1() {
                 className="form-control"
                 id="email"
                 placeholder="Enter Email Address"
+                name="email"
+                value={initialData.email}
+                onChange={collectData}
               />
             </div>
             <div className="form-group">
@@ -31,6 +51,9 @@ export default function Registration1() {
                 className="form-control"
                 id="password"
                 placeholder="Enter Password"
+                name="password"
+                value={initialData.password}
+                onChange={collectData}
               />
             </div>
             <div className="form-group">
