@@ -54,9 +54,9 @@ export default function Registration2() {
               </label>
               <input type="date" id="start" name="trip-start" />
             </div>
-            <button type="submit" className="btn btn-login">
+            <Link as={NavLink} to="/registration3" className="btn btn-login">
               Next
-            </button>
+            </Link>
           </form>
         </div>
       </div>

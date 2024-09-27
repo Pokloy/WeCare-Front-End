@@ -265,11 +265,29 @@ table {
   animation: bounce 1.4s infinite ease-in-out both;
 }
 
-/* Change color for the second dot */
-.dot:nth-child(2) {
-  background-color: #b3b3b3; /* Color of the second dot */
-  animation-delay: -0.7s; /* Delay to create the alternate bounce */
+
+.dot-dif-color {
+  background-color: #b3b3b3;
+  transition: background-color 0.3s ease; /* Smooth transition */
 }
+
+.dot-dif-color:hover {
+  background-color: #808080; /* Darker shade on hover */
+}
+
+a.btn-get-started {
+  text-decoration: none; /* Removes underline */
+  color: white; /* Inherits the parent element's color */
+  text-align: center;
+}
+
+a.btn-get-started:hover {
+  text-decoration: none; /* Ensures no underline on hover */
+  color: white; /* Removes color change on hover */
+  text-align: center;
+}
+
+
 
 
 
@@ -428,7 +446,9 @@ table {
   color: #888; /* Icon color */
 }
 
-
+a{
+  color: #888;
+}
 
 
 

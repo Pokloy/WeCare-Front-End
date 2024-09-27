@@ -6,8 +6,8 @@ import Authenticated from './Authenticated';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
-     <Authenticated /> 
+     <App /> 
+     {/* <Authenticated />  */}
   </React.StrictMode>
 );
 
