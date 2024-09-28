@@ -1,16 +1,19 @@
 import "./App.css";
 import { useState } from "react";
 import AppNavbar from "./components/AppNavbar";
-import SideMenu from "./components/SideMenu";
-import Login from "./pages/Login";
-import Home from "./pages/Home";
-import Home2 from "./pages/Home2";
-import Registration1 from "./pages/Registration1";
-import Registration2 from "./pages/Registration2";
-import Registration3 from "./pages/Registration3";
-import DashBoard from "./pages/DashBoard";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Route, Routes } from "react-router-dom";
+import SideMenu from './components/SideMenu';
+
+import Login from './pages/Login';
+import Home from './pages/Home';
+import Home2 from './pages/Home2';
+import Registration1 from './pages/Registration1';
+import Registration2 from './pages/Registration2';
+import Registration3 from './pages/Registration3';
+import DashBoard from './pages/DashBoard';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import DashBoardCareGiver from "./pages/DashBoardCareGiver";
+
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Control sidebar open state
@@ -47,7 +50,8 @@ function App() {
               <AppNavbar isLoggedIn={isLoggedIn} />
               <div className="mx-4 mt-5">
                 <Routes>
-                  <Route path="/dashboard" element={<DashBoard />} />
+                  <Route path='/dashboard' element={<DashBoard />} />
+                  <Route path='/dashboard-caregiver' element={<DashBoardCareGiver />} />
                 </Routes>
               </div>
             </div>

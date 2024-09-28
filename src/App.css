@@ -459,6 +459,22 @@ a{
   color: #888;
 }
 
+.h2-font-size{
+  font-size: 1.5rem;
+}
+
+.icon-forward-arrow{
+  font-size: 1.5 !important;
+}
+
+.dashboard-cargiver-container{
+  width: 20vh;
+  height: auto;
+  padding: 2rem;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+
 
 
 

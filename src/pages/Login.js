@@ -39,8 +39,14 @@ export default function Login({ setIsLoggedIn }) {
             </div>
             <Link type="submit" className="btn btn-login" 
             onClick={handleLoginClick}
+            as={NavLink} to="/dashboard-caregiver">
+              Login CareGiver
+            </Link>
+
+            <Link type="submit" className="btn btn-login" 
+            onClick={handleLoginClick}
             as={NavLink} to="/dashboard">
-              Login
+              Login Senior
             </Link>
             <div className="signup-text">
               <small>
