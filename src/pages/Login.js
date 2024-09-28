@@ -1,8 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 
-export default function Login() {
-  const [sampleLogin, setSampleLogin] = useState(false);
+export default function Login({ setIsLoggedIn }) {
+  const handleLoginClick = () => {
+    setIsLoggedIn(true); // Set login state to true
+  }
 
   return (
     <div className="background1">
@@ -35,9 +37,11 @@ export default function Login() {
             <div className="form-text mb-4 mt-4">
               <a href="#">Forgot Password?</a>
             </div>
-            <button type="submit" className="btn btn-login">
+            <Link type="submit" className="btn btn-login" 
+            onClick={handleLoginClick}
+            as={NavLink} to="/dashboard">
               Login
-            </button>
+            </Link>
             <div className="signup-text">
               <small>
                 Don't have an account?{" "}
