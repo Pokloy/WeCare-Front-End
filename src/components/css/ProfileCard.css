@@ -4,7 +4,8 @@
 
 .profile-card {
   padding: 5rem 0rem 0rem 0rem;
-  gap: 5rem;
+  display: grid;
+  gap: 2rem;
 }
 
 .profile-head {
@@ -23,6 +24,11 @@
   align-items: center;
   background: #f0f0f0;
   border: none;
+}
+
+.user-picture {
+  border-radius: 2.5rem;
+  background: #ffff;
 }
 
 .profile-users {
