@@ -1,0 +1,35 @@
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.profile-card {
+  padding: 5rem 0rem 0rem 0rem;
+  gap: 5rem;
+}
+
+.profile-head {
+  display: flex;
+  gap: 2rem;
+}
+
+.profile {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  width: 15rem;
+  align-items: center;
+  background: #f0f0f0;
+  border: none;
+}
+
+.profile-users {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  background: #f0f0f0;
+  border-radius: 1rem;
+}
