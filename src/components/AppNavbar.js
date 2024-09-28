@@ -16,6 +16,8 @@ export default function AppNavbar({ isSidebarOpen }) {
     setExpanded(!expanded);
   };
 
+
+
     return (
         <>
          <Navbar expand="lg" expanded={expanded} className="navbar-bg">
@@ -45,7 +47,6 @@ export default function AppNavbar({ isSidebarOpen }) {
                             <h5 className="font-white">Services</h5>
                         </Nav.Link>
 
-                        
                         <Nav.Link as={NavLink} to="/sign-in" className="px-3 btn-sign-in px-5 mr-5" onClick={() => setExpanded(false)}>
                             <h5 className="font-white">Sign In</h5>
                         </Nav.Link>
@@ -53,14 +54,9 @@ export default function AppNavbar({ isSidebarOpen }) {
                 </Navbar.Collapse>
             </Navbar> 
 
-        </>
-    );
 
-}
-
-
-
-        {/* <div className='ml-5 mt-2 d-flex'>
+            
+         <div className='ml-5 mt-2 d-flex'>
             <div className=''>
                 <h1 className='h1-authencated'>Home</h1>
             </div>
@@ -79,7 +75,14 @@ export default function AppNavbar({ isSidebarOpen }) {
                     account_circle
                 </span>
             </div>
-        </div> */}
+        </div> 
+        </>
+    );
+
+}
+
+
+
 
 
 

@@ -1,6 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
 
 export default function Login() {
+  const [sampleLogin, setSampleLogin] = useState(false);
+
   return (
     <div className="background1">
       <div className="login-container">
