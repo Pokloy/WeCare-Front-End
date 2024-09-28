@@ -69,7 +69,7 @@ export default function ProfileCard() {
             className="user-picture"
           />
           <div className="card-body">
-            <h5 className="card-title text-blue">Jane Doe</h5>
+            <h5 className="card-title text-blue">Jane Does</h5>
           </div>
         </div>
       </div>
