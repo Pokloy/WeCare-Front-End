@@ -286,6 +286,15 @@ a.btn-get-started:hover {
   color: white; /* Removes color change on hover */
   text-align: center;
 }
+/* By default, the not-authenticated navbar is visible */
+.navbar-not-authenticated {
+  display: initial;
+}
+
+/* The authenticated navbar is hidden by default */
+.navbar-authenticated {
+  display: none;
+}
 
 
 
