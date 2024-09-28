@@ -1,5 +1,7 @@
+import { useSelector } from "react-redux";
 export default function Registration3(){
-
+    const data = useSelector(state=>state.registration);
+    
     return (
         <div className='background1'>
         <div className="login-container">
@@ -13,9 +15,6 @@ export default function Registration3(){
                             <label for="email" className='pb-3'>Step 3: Roles and Agreement</label>
                             <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
                         </div>
-
-
-
                         <div className="form-group">
                             <label for="password" className='pb-3'>Register an account for:</label>
                             <div className="d-flex justify-content-center">
@@ -50,11 +49,6 @@ export default function Registration3(){
                             </div>
                       
                         </div>
-
-
-
-
-
                         <button type="submit" className="btn btn-login">Register</button>
                     </form>
                 </div>
