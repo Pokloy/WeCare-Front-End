@@ -13,15 +13,29 @@ import DashBoardSenior from "./pages/DashBoardSenior";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import DashBoardCareGiver from "./pages/DashBoardCareGiver";
+import { UserProvider } from "./UserContext";
+
+
+
 
 function App() {
+  const [user, setUser] = useState({
+    isSuccess:false
+  }) 
+
+  const unsetUser = () => {
+    localStorage.clear();
+  }
+
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Control sidebar open state
-  const [isLoggedIn, setIsLoggedIn] = useState(true); // Temporary authentication state
+  const [isLoggedIn, setIsLoggedIn] = useState(user.isSuccess); // Temporary authentication state
+
 
   return (
     <>
       {/* Non-authenticated routes */}
-      {!isLoggedIn ? (
+     <UserProvider value={{user, setUser, unsetUser}}> 
+      {!user.isSuccess ? (
         <Router>
           <AppNavbar isSidebarOpen={isSidebarOpen} isLoggedIn={isLoggedIn} />
           <Routes>
@@ -63,6 +77,7 @@ function App() {
           </div>
         </Router>
       )}
+      </UserProvider>
     </>
   );
 }
