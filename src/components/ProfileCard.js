@@ -1,5 +1,9 @@
 import "./css/ProfileCard.css";
+
+
+
 export default function ProfileCard() {
+
   return (
     <div className="profile-card">
       <div className="profile-head">
