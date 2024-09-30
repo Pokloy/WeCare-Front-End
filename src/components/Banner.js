@@ -10,7 +10,9 @@ export default function Banner() {
   return (
     <div className="banner d-flex">
       <p className="greeting">WELCOME!</p>
-      <p className="user">Senior123 {userName}</p>
+      <p className="user">
+        {user.firstname} {user.lastname}
+      </p>
     </div>
   );
 }

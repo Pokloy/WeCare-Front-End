@@ -22,7 +22,17 @@ function App() {
   const [user, setUser] = useState({
     // this is just set to null
     id: null,
+    encryptedId: null,
+    lastname: null,
+    firstname: null,
+    email: null,
     userType: null,
+    street: null,
+    barangayId: null,
+    contactNumber: null,
+    gender: null,
+    birthDate: null,
+    experienceId: null,
   });
 
   // for clearing token of logout
@@ -47,7 +57,17 @@ function App() {
           // the passed id will be set in the setUser and will be set globally carried in line 21 const [user, setUser] = useState and so on
           setUser({
             id: data.data.userId,
+            encryptedId: data.data.userType,
+            lastname: data.data.lastname,
+            firstname: data.data.firstname,
+            email: data.data.email,
             userType: data.data.userType,
+            street: data.data.street,
+            barangayId: data.data.barangayId,
+            contactNumber: data.data.contactNumber,
+            gender: data.data.gender,
+            birthDate: data.data.birthDate,
+            experienceId: data.data.experienceId,
           });
         } else {
           setUser({
@@ -63,9 +83,6 @@ function App() {
     <UserProvider value={{ user, setUser, unsetUser }}>
       <Router>
         <AppNavbar />
-        {user.id !== null && (
-          <SideMenu isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
-        )}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/welcome" element={<Home2 />} />

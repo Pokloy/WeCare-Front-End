@@ -1,11 +1,13 @@
 import { Link, Navigate, NavLink } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
 import UserContext from "../UserContext";
+import Swal from "sweetalert2";
 
 export default function Login() {
   const { user, setUser } = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
 
   function authenticate(e) {
     e.preventDefault();
@@ -32,6 +34,11 @@ export default function Login() {
 
           console.log("log-in successfully");
         } else {
+          Swal.fire({
+            title: "Authentication failed",
+            icon: "error",
+            text: "Check your login details and try again.",
+          });
           console.log("log-in failed");
         }
       });
@@ -49,7 +56,17 @@ export default function Login() {
 
         setUser({
           id: data.data.userId,
+          encryptedId: data.data.userType,
+          lastname: data.data.lastname,
+          firstname: data.data.firstname,
+          email: data.data.email,
           userType: data.data.userType,
+          street: data.data.street,
+          barangayId: data.data.barangayId,
+          contactNumber: data.data.contactNumber,
+          gender: data.data.gender,
+          birthDate: data.data.birthDate,
+          experienceId: data.data.experienceId,
         });
       });
   };
@@ -64,6 +81,13 @@ export default function Login() {
         <div className="login-container">
           <div class="login-box">
             <h3 className="pt-4 pb-4">Login to your account</h3>
+            {user.error ? (
+              <di>
+                <h5 className="error">Bad Credentials</h5>
+              </di>
+            ) : (
+              <di></di>
+            )}
             <form onSubmit={(e) => authenticate(e)}>
               <div className="form-group">
                 <label for="email" className="pb-3">

@@ -12,8 +12,11 @@ const DashBoardSenior = () => {
     <Navigate to="/login" />
   ) : (
     <div>
-      <Banner />
-      <ProfileCard />
+      <SideMenu />
+      <div className=" nav-content shifted">
+        <Banner />
+        <ProfileCard />
+      </div>
     </div>
   );
 };

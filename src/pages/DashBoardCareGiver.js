@@ -12,11 +12,11 @@ const DashBoardCareGiver = () => {
     <Navigate to="/login" />
   ) : (
     <div>
-      <div>
-        <SideMenu />
+      <SideMenu />
+      <div className=" nav-content shifted">
+        <Banner />
+        <ProfileCard />
       </div>
-      <Banner />
-      <ProfileCard />
     </div>
   );
 };
