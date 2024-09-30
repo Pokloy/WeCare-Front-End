@@ -2,7 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import AppNavbar from "./components/AppNavbar";
 import SideMenu from "./components/SideMenu";
-
+import Logout from "./pages/Logout";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Home2 from "./pages/Home2";
@@ -16,6 +16,8 @@ import DashBoardCareGiver from "./pages/DashBoardCareGiver";
 import { UserProvider } from "./UserContext";
 
 function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   // for getting token this is for global this is helped whit the UserContext.js
   const [user, setUser] = useState({
     // this is just set to null
@@ -61,15 +63,19 @@ function App() {
     <UserProvider value={{ user, setUser, unsetUser }}>
       <Router>
         <AppNavbar />
+        {user.id !== null && (
+          <SideMenu isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
+        )}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/welcome" element={<Home2 />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard-caregiver" element={<DashBoardCareGiver />} />
-          <Route path="/dashboard-senior" element={<DashBoardSenior />} />
           <Route path="/registration1" element={<Registration1 />} />
           <Route path="/registration2" element={<Registration2 />} />
           <Route path="/registration3" element={<Registration3 />} />
+          <Route path="/dashboard-caregiver" element={<DashBoardCareGiver />} />
+          <Route path="/dashboard-senior" element={<DashBoardSenior />} />
+          <Route path="/logout" element={<Logout />} />
         </Routes>
       </Router>
     </UserProvider>

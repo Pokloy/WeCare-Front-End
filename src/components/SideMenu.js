@@ -1,6 +1,11 @@
 import React from "react";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
 
-export default function SideMenu({ isOpen, setIsOpen }) {
+export default function SideMenu() {
+  const [isOpen, setIsOpen] = useState(true);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -50,7 +55,9 @@ export default function SideMenu({ isOpen, setIsOpen }) {
           <span className="material-symbols-outlined side-menu-color icon-size">
             logout
           </span>
-          <p>Log-out</p>
+          <Nav.Link as={NavLink} to="/logout" exact>
+            Log-out
+          </Nav.Link>
         </div>
       </div>
     </>

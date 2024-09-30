@@ -1,10 +1,16 @@
 import Navbar from "react-bootstrap/Navbar";
 import { Link, NavLink } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import UserContext from "../UserContext";
 
 export default function AppNavbar({ isSidebarOpen, isLoggedIn }) {
+  const { user } = useContext(UserContext);
   const [expanded, setExpanded] = useState(false);
+
+  if (user.id !== null) {
+    isLoggedIn = true;
+  }
 
   return (
     <>

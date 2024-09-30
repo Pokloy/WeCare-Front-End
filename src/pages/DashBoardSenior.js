@@ -12,9 +12,6 @@ const DashBoardSenior = () => {
     <Navigate to="/login" />
   ) : (
     <div>
-      <div>
-        <SideMenu />
-      </div>
       <Banner />
       <ProfileCard />
     </div>
