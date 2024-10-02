@@ -5,8 +5,6 @@ import UserContext from "../UserContext";
 export default function Banner() {
   const { user, setUser } = useContext(UserContext);
 
-  const userName = "user";
-
   return (
     <div className="banner d-flex">
       <p className="greeting">WELCOME!</p>

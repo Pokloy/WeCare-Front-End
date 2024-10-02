@@ -4,13 +4,21 @@ import Nav from "react-bootstrap/Nav";
 import { useContext, useState } from "react";
 import UserContext from "../UserContext";
 
-export default function AppNavbar({ isSidebarOpen, isLoggedIn }) {
+import "./css/Profile.css";
+
+export default function AppNavbar({ isLoggedIn }) {
+  const [isOpen, setIsOpen] = useState(true);
   const { user } = useContext(UserContext);
   const [expanded, setExpanded] = useState(false);
 
   if (user.id !== null) {
     isLoggedIn = true;
   }
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+    console.log("cliskced");
+  };
 
   return (
     <>
@@ -94,7 +102,7 @@ export default function AppNavbar({ isSidebarOpen, isLoggedIn }) {
                   </span>
                 </div>
 
-                <div>
+                <div onClick={toggleMenu}>
                   <span className="material-symbols-outlined side-menu-color icon-size mr-5">
                     account_circle
                   </span>
@@ -104,6 +112,49 @@ export default function AppNavbar({ isSidebarOpen, isLoggedIn }) {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+      {/* Side Profile  */}
+      {isLoggedIn ? (
+        <>
+          {!isOpen ? (
+            <div className="hamburgerProfile" onClick={toggleMenu}>
+              <span class="material-symbols-outlined">close</span>
+            </div>
+          ) : (
+            <></>
+          )}
+
+          <div
+            className={`${!isOpen ? "sidebarProfileOther" : "closeSide"}`}
+          ></div>
+          <div className={`${!isOpen ? "sidebarProfile" : "closeSide"}`}>
+            <div className="logo my-4 text-center">
+              <img src="./wecare_logo.png" alt="WeCare" width="100" />
+            </div>
+
+            <div className="menu-itemsProfile flex-grow-1 d-flex flex-column ml-4">
+              <div className="menu-itemProfile my-3">
+                <p className="ml-2 user">
+                  {user.firstname} {user.lastname}
+                </p>
+              </div>
+              <div className="menu-itemProfile my-3">
+                <p>Edit Profile</p>
+                <span class="material-symbols-outlined">border_color</span>
+              </div>
+            </div>
+            <div className="support-item mb-4 ml-4">
+              <span className="material-symbols-outlined side-menu-color icon-size">
+                settings
+              </span>
+              <Nav.Link as={NavLink} to="/dashboard-senior" exact>
+                Settings
+              </Nav.Link>
+            </div>
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
     </>
   );
 }

@@ -1,21 +1,18 @@
-import React from "react";
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useRef } from "react";
+import { useNavigate, NavLink } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 
 export default function SideMenu() {
-  const [isOpen, setIsOpen] = useState(true);
+  const modalRef = useRef(null); // Reference for the modal element
+  const navigate = useNavigate(); // React Router's navigation hook
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+  const handleLogout = () => {
+    navigate("/logout");
   };
-
   return (
     <>
-      {/* Hamburger button */}
-
       {/* Sidebar */}
-      <div className={`sidebar ${isOpen ? "open" : ""}`}>
+      <div className="sidebar open">
         <div className="logo my-4 text-center">
           <img src="./wecare_logo.png" alt="WeCare" width="100" />
         </div>
@@ -52,9 +49,50 @@ export default function SideMenu() {
           <span className="material-symbols-outlined side-menu-color icon-size">
             logout
           </span>
-          <Nav.Link as={NavLink} to="/logout" exact>
-            Log-out
-          </Nav.Link>
+          <button
+            type="button"
+            className="button-logout"
+            data-toggle="modal"
+            data-target="#exampleModal"
+          >
+            Log-Out
+          </button>
+        </div>
+      </div>
+
+      <div
+        className="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">
+                Are you sure you Log-Out?
+              </h5>
+            </div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn button-modal-logout"
+                onClick={handleLogout}
+                data-dismiss="modal"
+              >
+                Yes
+              </button>
+
+              <button
+                type="button"
+                className="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                No
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </>
