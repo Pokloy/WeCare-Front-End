@@ -142,7 +142,7 @@ export default function AppNavbar({ isLoggedIn }) {
                 <span class="material-symbols-outlined">border_color</span>
               </div>
             </div>
-            <div className="support-item mb-4 ml-4">
+            <div className="support-item mb-4 ml-4 d-flex">
               <span className="material-symbols-outlined side-menu-color icon-size">
                 settings
               </span>

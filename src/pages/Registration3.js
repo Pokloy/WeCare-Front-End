@@ -73,7 +73,9 @@ export default function Registration3() {
 
               <div className="form-group">
                 <input type="checkbox" className="mr-2" />
-                <label className="pb-2">I agree to the Terms & Conditions.</label>
+                <label className="pb-2">
+                  I agree to the Terms & Conditions.
+                </label>
               </div>
             </div>
             <button type="submit" className="btn btn-login">
@@ -83,57 +85,71 @@ export default function Registration3() {
         </div>
       </div>
 
-
       {/* Senior Citizen Modal */}
       {isSeniorModalOpen && (
-        <div className="modal">
-          <div className="modal-content d-block">
+        <div className="modals">
+          <div className="modal-contents d-block">
             <span className="close" onClick={closeSeniorModal}>
               &times;
             </span>
             <h2>Senior Application Form</h2>
             <form>
-
-            <div className="d-flex">  
-
-             <div className="d-block">  
-
-                <div className="form-group d-flex">
+              <div className="d-flex">
+                <div className="d-block">
+                  <div className="form-group d-flex">
                     <label>Name</label>
-                    <input type="text" className="form-control" placeholder="Enter Family Name" />
-                    <input type="text" className="form-control" placeholder="Enter First Name  " />
-                </div>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Enter Family Name"
+                    />
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Enter First Name  "
+                    />
+                  </div>
 
-                <div className="form-group d-flex">
+                  <div className="form-group d-flex">
                     <label>Address</label>
-                    <input type="number" className="form-control" placeholder="Age" />
+                    <input
+                      type="number"
+                      className="form-control"
+                      placeholder="Age"
+                    />
+                  </div>
                 </div>
 
-              </div> 
-
-              <div className="d-block ml-5">  
-
-                    <div className="form-group sex-checkBox-container">
-                        <label>Sex: </label>
-                        <div className="d-flex">
-                        <input type="checkbox" className="form-control sex-checkBox" />
-                        <label>Male</label>
-                        </div>
-
-                        <div className="d-flex">
-                        <input type="checkbox" className="form-control sex-checkBox" />
-                        <label>Female</label>
-                        </div>
+                <div className="d-block ml-5">
+                  <div className="form-group sex-checkBox-containers">
+                    <label>Sex: </label>
+                    <div className="d-flex">
+                      <input
+                        type="checkbox"
+                        className="form-control sex-checkBoxs"
+                      />
+                      <label>Male</label>
                     </div>
 
-                    <div className="form-group d-flex">
-                        <label>Address</label>
-                        <input type="number" className="form-control" placeholder="Age" />
+                    <div className="d-flex">
+                      <input
+                        type="checkbox"
+                        className="form-control sex-checkBoxs"
+                      />
+                      <label>Female</label>
                     </div>
+                  </div>
 
-                </div> 
-            </div> 
-
+                  <div className="form-group d-flex">
+                    <label>Address</label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      placeholder="Age"
+                    />
+                  </div>
+                </div>
+              </div>
 
               {/* Add more fields as necessary */}
               <button type="submit" className="btn btn-submit">
@@ -146,8 +162,8 @@ export default function Registration3() {
 
       {/* Caregiver Modal */}
       {isCaregiverModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
+        <div className="modals">
+          <div className="modal-contents">
             <span className="close" onClick={closeCaregiverModal}>
               &times;
             </span>
@@ -155,7 +171,11 @@ export default function Registration3() {
             <form>
               <div className="form-group">
                 <label>Name</label>
-                <input type="text" className="form-control" placeholder="Name" />
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Name"
+                />
               </div>
               <div className="form-group">
                 <label>Experience (in years)</label>
