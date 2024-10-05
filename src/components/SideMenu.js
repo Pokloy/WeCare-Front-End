@@ -1,34 +1,37 @@
 import React, { useRef, useState } from "react";
-import { useNavigate, NavLink } from "react-router-dom";
+import { useNavigate, NavLink, Navigate } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
+import AppNavbar from "./AppNavbar";
 
-export default function SideMenu() {
+export default function SideMenu({
+  activeFind,
+  activeHome,
+  activeMessage,
+  activeAppointment,
+}) {
   const modalRef = useRef(null); // Reference for the modal element
   const navigate = useNavigate(); // React Router's navigation hook
-  const [activeNavHome, setactiveNavHome] = useState(true);
-  const [activeNavFind, setActiveNavFind] = useState(false);
-  const [activeNavMes, setActiveNavMes] = useState(false);
+  const [activeNavHome, setactiveNavHome] = useState(activeHome);
+  const [activeNavFind, setActiveNavFind] = useState(activeFind);
+  const [activeNavMes, setActiveNavMes] = useState(activeMessage);
+  const [activeNavApp, setActiveNavApp] = useState(activeAppointment);
   const [activeNavSupp, setActiveNavSupp] = useState(false);
 
   const clickedActiveHome = () => {
-    setactiveNavHome(true);
-    setActiveNavFind(false);
-    setActiveNavMes(false);
-    setActiveNavSupp(false);
+    navigate("/dashboard-senior");
   };
 
   const clickedActiveFind = () => {
-    setactiveNavHome(false);
-    setActiveNavFind(true);
-    setActiveNavMes(false);
-    setActiveNavSupp(false);
+    <AppNavbar activeHead={true} />;
+    navigate("/dashboard-senior/find");
   };
 
   const clickedActiveMess = () => {
-    setactiveNavHome(false);
-    setActiveNavFind(false);
-    setActiveNavMes(true);
-    setActiveNavSupp(false);
+    navigate("/dashboard-senior/message");
+  };
+
+  const clickedActiveApp = () => {
+    navigate("/dashboard-senior/appointment");
   };
 
   const clickedActiveSupp = () => {
@@ -36,6 +39,7 @@ export default function SideMenu() {
     setActiveNavFind(false);
     setActiveNavMes(false);
     setActiveNavSupp(true);
+    setActiveNavApp(false);
   };
 
   const handleLogout = () => {
@@ -46,7 +50,7 @@ export default function SideMenu() {
       {/* Sidebar */}
       <div className="sidebar open">
         <div className="logo my-4 text-center">
-          <img src="./wecare_logo.png" alt="WeCare" width="100" />
+          <img src="../wecare_logo.png" alt="WeCare" width="100" />
         </div>
 
         <div className="menu-items flex-grow-1 d-flex flex-column ml-4 mr-4">
@@ -82,6 +86,18 @@ export default function SideMenu() {
               chat
             </span>
             <p className="ml-2">Message</p>
+          </div>
+
+          <div
+            onClick={clickedActiveApp}
+            className={
+              activeNavApp ? "menu-item my-3 actives" : "menu-item my-3"
+            }
+          >
+            <span class="material-symbols-outlined side-menu-color icon-size">
+              list_alt
+            </span>
+            <p className="ml-2">Appointment</p>
           </div>
         </div>
 

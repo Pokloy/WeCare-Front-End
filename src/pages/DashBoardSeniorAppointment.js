@@ -1,24 +1,22 @@
-import Banner from "../components/Banner";
-import ProfileCard from "../components/ProfileCard";
-import SideMenu from "../components/SideMenu";
 import { useContext, useEffect, useState } from "react";
 import UserContext from "../UserContext";
+import SideMenu from "../components/SideMenu";
 import { Link, Navigate, NavLink } from "react-router-dom";
+import Appointment from "../components/Appointment";
 
-const DashBoardSenior = () => {
+const DashBoardSeniorAppointment = () => {
   const { user } = useContext(UserContext);
 
   return user.id === null ? (
     <Navigate to="/login" />
   ) : (
     <div>
-      <SideMenu activeHome={true} />
+      <SideMenu activeAppointment={true} />
       <div className=" nav-content shifted">
-        <Banner />
-        <ProfileCard />
+        <Appointment />
       </div>
     </div>
   );
 };
 
-export default DashBoardSenior;
+export default DashBoardSeniorAppointment;
