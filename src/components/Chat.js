@@ -10,6 +10,8 @@ const ChatComponent = ({ senderId, recipientId }) => {
     const [messages, setMessages] = useState([]);
     const [messageContent, setMessageContent] = useState('');
     const [file, setFile] = useState(null);
+    const [selectedImage, setSelectedImage] = useState(null); // State to store clicked image URL
+    const [isModalOpen, setModalOpen] = useState(false); // State to toggle modal
     const messagesEndRef = useRef(null);
 
     // Scroll to the bottom of the chat when new messages arrive
@@ -103,8 +105,17 @@ const ChatComponent = ({ senderId, recipientId }) => {
             console.error("Error uploading files:", error);
         }
     };
+    const handleImageClick = (imageUrl) => {
+        setSelectedImage(imageUrl); // Set the clicked image
+        setModalOpen(true); // Open the modal
+    };
 
-    return (
+    const handleCloseModal = () => {
+        setModalOpen(false); // Close the modal
+        setSelectedImage(null); // Reset selected image
+    };
+
+    return  (
         <div className="container w-100 m-4 mx-auto">
             <div className="row justify-content-center">
                 <div className="col-12 col-md-8 col-lg-6 w-100">
@@ -116,13 +127,17 @@ const ChatComponent = ({ senderId, recipientId }) => {
                             {messages.map((msg, index) => {
                                 const isUserMessage = msg.senderId == senderId;
                                 const isTextMessage = msg.contentType === 'text';
-                                
+
                                 return (
                                     <div key={index} className={`mb-2 d-flex ${isUserMessage ? 'justify-content-end' : 'justify-content-start'}`}>
                                         <div className={`p-2 rounded ${isUserMessage && isTextMessage ? 'bg-primary text-white' : 'bg-light text-dark'}`}>
-                                           
                                             {msg.contentType === 'file' 
-                                                ? <img src={`${apiUrl}${msg.messageContent}`} alt="uploaded" className="img-fluid" style={{ maxWidth: '200px' }} />
+                                                ? <img src={`${apiUrl}${msg.messageContent}`} 
+                                                       alt="uploaded" 
+                                                       className="img-fluid" 
+                                                       style={{ maxWidth: '200px', cursor: 'pointer' }} 
+                                                       onClick={() => handleImageClick(`${apiUrl}${msg.messageContent}`)} // Click to open modal
+                                                />
                                                 : msg.messageContent}
                                         </div>
                                     </div>
@@ -140,18 +155,18 @@ const ChatComponent = ({ senderId, recipientId }) => {
                                     placeholder="Type a message"
                                     className="form-control"
                                 />
-                                 {messageContent.trim() && (
+                                {messageContent.trim() && (
                                     <button className="btn btn-primary" onClick={sendMessage}>Send</button>
                                 )}
                             </div>
-                            <div className="mt-2  d-flex p-2 align-items-center "> 
+                            <div className="mt-2 d-flex p-2 align-items-center"> 
                                 <input 
                                     type="file" 
                                     className="form-control mx-auto" 
-                                    multiple // Allows selecting multiple files
-                                    onChange={(e) => setFile(e.target.files)} // Handle multiple files
+                                    multiple 
+                                    onChange={(e) => setFile(e.target.files)} 
                                 />
-                                 {file && file.length > 0 && (
+                                {file && file.length > 0 && (
                                     <button className="btn btn-secondary mt-2 mx-auto" onClick={handleFileUpload}>Upload</button>
                                 )}
                             </div>
@@ -159,6 +174,19 @@ const ChatComponent = ({ senderId, recipientId }) => {
                     </div>
                 </div>
             </div>
+
+            {/* Modal for showing enlarged image */}
+            {isModalOpen && (
+                <div className="modal show d-block" tabIndex="-1" role="dialog" onClick={handleCloseModal} style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }}>
+                    <div className="modal-dialog modal-dialog-centered" role="document">
+                        <div className="modal-content">
+                            <div className="modal-body">
+                                <img src={selectedImage} alt="Enlarged" className="img-fluid" style={{ maxWidth: '100%' }} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
