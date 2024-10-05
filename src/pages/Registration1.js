@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getRegisteredData } from "../store/registration_action";
 import { useState } from "react";
 
@@ -7,29 +8,47 @@ export default function Registration1() {
 
   const dispatch = useDispatch();
 
+  const navigate = useNavigate(); 
+
   const [initialData,setInitialData] = useState({
     email:"",
     password:""
   })
+  
+   function collectData(e){  
+    e.preventDefault(); // Prevent form submission from reloading the page
 
-  function collectData(e){  
-    setInitialData({...initialData,[e.target.name]:e.target.value });
+    //setInitialData({...initialData,[e.target.name]:e.target.value });
 
     dispatch(getRegisteredData(initialData));
+
+    // Navigate to the next page after form submission
+    navigate("/registration3");
+   }
+
+
+   function handleChange(e) {
+    // Use spread operator to update the specific field
+    setInitialData({
+      ...initialData,
+      [e.target.name]: e.target.value
+    });
   }
 
   return (
     <div className="background1">
       <div className="login-container">
-        <div class="login-box">
-          <span class="material-symbols-outlined">arrow_back</span>
+        <div className="login-box">
+          <span className="material-symbols-outlined" onClick={() => navigate("/login")}>
+            arrow_back
+            </span>
           <h3 className="pb-3">Let's create your account</h3>
-          <form>
+          <form onSubmit={collectData}>
             <div className="form-group">
-              <label for="email" className="pb-3">
+              <label className="pb-3">
                 Step 1: Account Details
               </label>
-              <label for="email" className="pb-3">
+              <label className="pb-3">
                 Email
               </label>
               <input
@@ -39,11 +58,12 @@ export default function Registration1() {
                 placeholder="Enter Email Address"
                 name="email"
                 value={initialData.email}
-                onChange={collectData}
+                onChange={handleChange} // Use a shared handler for inputs
+                required
               />
             </div>
             <div className="form-group">
-              <label for="password" className="pb-3">
+              <label className="pb-3">
                 Password
               </label>
               <input
@@ -53,23 +73,23 @@ export default function Registration1() {
                 placeholder="Enter Password"
                 name="password"
                 value={initialData.password}
-                onChange={collectData}
+                onChange={handleChange} // Shared handler
+                required
               />
             </div>
             <div className="form-group">
-              <label for="password" className="pb-3">
+              <label className="pb-3">
                 Confirm Password
               </label>
               <input
                 type="password"
                 className="form-control"
-                id="password"
+                id="confirmPassword"
                 placeholder="Re Enter Password"
+                required
               />
             </div>
-            <Link as={NavLink} to="/registration2" className="btn btn-login">
-              Next
-            </Link>
+            <input type="submit" value="Submit and Next" className="btn btn-login" />
           </form>
         </div>
       </div>
