@@ -416,7 +416,7 @@ a.btn-get-started:hover {
 }
 
 /* Support and Logout item styling */
-.support-item {
+.logout-bottom {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
@@ -537,6 +537,11 @@ a {
   border-radius: 10px;
 }
 
+.actives {
+  background: #ffffff;
+  border-radius: 0.5rem;
+}
+
 @media only screen and (max-width: 600px) {
   .display-none-smartphone {
     display: none;
@@ -601,4 +606,35 @@ a {
   border: #56c3c4;
   background-color: #56c3c4;
   color: #f0f0f0;
+}
+
+.modals {
+  display: flex; /* Use flexbox for centering */
+  position: fixed;
+  z-index: 1000; /* Ensure the modal appears on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+.modal-contents {
+  background-color: #fff; /* White background for content */
+  padding: 20px; /* Spacing inside modal */
+  border-radius: 5px; /* Rounded corners */
+  width: max-content; /* Fixed width for modal */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+.close {
+  cursor: pointer; /* Pointer cursor for close button */
+  float: right; /* Float close button to the right */
+}
+.sex-checkBox-containers {
+  display: flex;
+  flex-direction: column;
+}
+.sex-checkBoxs {
+  display: flex;
 }

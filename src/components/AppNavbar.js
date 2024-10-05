@@ -6,7 +6,7 @@ import UserContext from "../UserContext";
 
 import "./css/Profile.css";
 
-export default function AppNavbar({ isLoggedIn }) {
+export default function AppNavbar({ isLoggedIn, activeHead }) {
   const [isOpen, setIsOpen] = useState(true);
   const { user } = useContext(UserContext);
   const [expanded, setExpanded] = useState(false);
@@ -44,6 +44,16 @@ export default function AppNavbar({ isLoggedIn }) {
         ) : (
           <div>
             <h1 className="h1-authencated">Home</h1>
+          </div>
+        )}
+
+        {activeHead ? (
+          <div>
+            <h1 className="h1-authencated">Home</h1>
+          </div>
+        ) : (
+          <div>
+            <h1 className="h1-authencated">No</h1>
           </div>
         )}
 
@@ -142,7 +152,7 @@ export default function AppNavbar({ isLoggedIn }) {
                 <span class="material-symbols-outlined">border_color</span>
               </div>
             </div>
-            <div className="support-item mb-4 ml-4">
+            <div className="support-item mb-4 ml-4 d-flex">
               <span className="material-symbols-outlined side-menu-color icon-size">
                 settings
               </span>
