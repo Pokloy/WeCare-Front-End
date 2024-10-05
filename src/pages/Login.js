@@ -7,11 +7,15 @@ export default function Login() {
   const { user, setUser } = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(false);
+  // const [error, setError] = useState(false);
 
+  useEffect(()=>{
+    console.log(`${process.env.REACT_APP_API_URL}login-user`)
+  },[])
   function authenticate(e) {
     e.preventDefault();
-    fetch(`${process.env.REACT_APP_API_URL}/login-user`, {
+   
+    fetch(`${process.env.REACT_APP_API_URL}main/login-user`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,6 +27,7 @@ export default function Login() {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data)
         if (data.isSuccess === true) {
           localStorage.setItem("token", data.data.token);
 
@@ -45,7 +50,8 @@ export default function Login() {
   }
 
   const retrieveUserDetails = (token) => {
-    fetch(`${process.env.REACT_APP_API_URL}/user-profile`, {
+    console.log(token)
+    fetch(`${process.env.REACT_APP_API_URL}main/user-profile`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -79,7 +85,7 @@ export default function Login() {
     <>
       <div className="background1">
         <div className="login-container">
-          <div class="login-box">
+          <div className="login-box">
             <h3 className="pt-4 pb-4">Login to your account</h3>
             {user.error ? (
               <di>

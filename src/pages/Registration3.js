@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 export default function Registration3(){
     const data = useSelector(state=>state.registration);
-    
+    console.log(data);
     return (
         <div className='background1'>
         <div className="login-container">
