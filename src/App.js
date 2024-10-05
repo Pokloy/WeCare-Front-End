@@ -54,7 +54,7 @@ function App() {
         // if there is data passed go to if and if there is non else
         if (data.auth !== "Failed") {
           console.log(data);
-          // the passed id will be set in the setUser and will be set globally carried in line 21 const [user, setUser] = useState and so on
+          // the passed id will be set in the setUser asand will be set globally carried in line 21 const [user, setUser] = useState and so on
           setUser({
             id: data.data.userId,
             encryptedId: data.data.userType,
