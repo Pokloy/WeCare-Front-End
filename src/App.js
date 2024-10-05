@@ -6,6 +6,7 @@ import Logout from "./pages/Logout";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Home2 from "./pages/Home2";
+import ChatList from "./components/ChatList";
 import Registration1 from "./pages/Registration1";
 import Registration2 from "./pages/Registration2";
 import Registration3 from "./pages/Registration3";
@@ -93,6 +94,7 @@ function App() {
           <Route path="/dashboard-caregiver" element={<DashBoardCareGiver />} />
           <Route path="/dashboard-senior" element={<DashBoardSenior />} />
           <Route path="/logout" element={<Logout />} />
+          <Route path="/chat" element={<ChatList/>}/>
         </Routes>
       </Router>
     </UserProvider>
