@@ -53,7 +53,7 @@ export default function SideMenu() {
           <div
             onClick={clickedActiveHome}
             className={
-              activeNavHome ? "menu-item my-3 active" : "menu-item my-3"
+              activeNavHome ? "menu-item my-3 actives" : "menu-item my-3"
             }
           >
             <span className="material-symbols-outlined side-menu-color icon-size ">
@@ -64,7 +64,7 @@ export default function SideMenu() {
           <div
             onClick={clickedActiveFind}
             className={
-              activeNavFind ? "menu-item my-3 active" : "menu-item my-3"
+              activeNavFind ? "menu-item my-3 actives" : "menu-item my-3"
             }
           >
             <span className="material-symbols-outlined side-menu-color icon-size">
@@ -75,7 +75,7 @@ export default function SideMenu() {
           <div
             onClick={clickedActiveMess}
             className={
-              activeNavMes ? "menu-item my-3 active" : "menu-item my-3"
+              activeNavMes ? "menu-item my-3 actives" : "menu-item my-3"
             }
           >
             <span className="material-symbols-outlined side-menu-color icon-size">
@@ -89,7 +89,7 @@ export default function SideMenu() {
           <div
             onClick={clickedActiveSupp}
             className={
-              activeNavSupp ? "menu-item my-3 active" : "menu-item my-3"
+              activeNavSupp ? "menu-item my-3 actives" : "menu-item my-3"
             }
           >
             <span className="material-symbols-outlined side-menu-color icon-size">
