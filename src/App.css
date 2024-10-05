@@ -638,3 +638,21 @@ a {
 .sex-checkBoxs {
   display: flex;
 }
+.label-spacing{
+  margin-top: .80rem;
+}
+.buttonSeniorSize{
+  height: auto;
+  width: max-content;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: #63cdda;
+}
+.select-input{
+  padding: initial !important;
+}
+.complete {
+  background-color: #4CAF50;
+  color: white;
+}
+

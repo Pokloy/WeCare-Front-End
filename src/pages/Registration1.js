@@ -59,6 +59,7 @@ export default function Registration1() {
                 name="email"
                 value={initialData.email}
                 onChange={handleChange} // Use a shared handler for inputs
+                required
               />
             </div>
             <div className="form-group">
@@ -73,6 +74,7 @@ export default function Registration1() {
                 name="password"
                 value={initialData.password}
                 onChange={handleChange} // Shared handler
+                required
               />
             </div>
             <div className="form-group">
@@ -84,6 +86,7 @@ export default function Registration1() {
                 className="form-control"
                 id="confirmPassword"
                 placeholder="Re Enter Password"
+                required
               />
             </div>
             <input type="submit" value="Submit and Next" className="btn btn-login" />
