@@ -7,6 +7,7 @@ import { Link, Navigate, NavLink } from "react-router-dom";
 
 const DashBoardSenior = () => {
   const { user } = useContext(UserContext);
+  const [activeNavHome, setActiveNavHome] = useState(true);
 
   return user.id === null ? (
     <Navigate to="/login" />
