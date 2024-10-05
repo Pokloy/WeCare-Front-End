@@ -9,9 +9,6 @@ export default function Login() {
   const [password, setPassword] = useState("");
   // const [error, setError] = useState(false);
 
-  useEffect(()=>{
-    console.log(`${process.env.REACT_APP_API_URL}login-user`)
-  },[])
   function authenticate(e) {
     e.preventDefault();
    

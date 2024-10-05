@@ -26,10 +26,10 @@
 //                                     <p className="font-white">Senior</p>                                    
 //                                 </div>
 
-import { useNavigate,useSelector } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 export default function Registration3() {
   const navigate = useNavigate();
 
