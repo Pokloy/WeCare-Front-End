@@ -127,7 +127,6 @@ const ChatComponent = ({ senderId, recipientId }) => {
                             {messages.map((msg, index) => {
                                 const isUserMessage = msg.senderId == senderId;
                                 const isTextMessage = msg.contentType === 'text';
-
                                 return (
                                     <div key={index} className={`mb-2 d-flex ${isUserMessage ? 'justify-content-end' : 'justify-content-start'}`}>
                                         <div className={`p-2 rounded ${isUserMessage && isTextMessage ? 'bg-primary text-white' : 'bg-light text-dark'}`}>
@@ -190,5 +189,4 @@ const ChatComponent = ({ senderId, recipientId }) => {
         </div>
     );
 };
-
 export default ChatComponent;
