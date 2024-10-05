@@ -10,6 +10,9 @@ import Registration1 from "./pages/Registration1";
 import Registration2 from "./pages/Registration2";
 import Registration3 from "./pages/Registration3";
 import DashBoardSenior from "./pages/DashBoardSenior";
+import DashBoardSeniorFind from "./pages/DashBoardSeniorFind";
+import DashBoardSeniorMessage from "./pages/DashBoardSeniorMessage";
+import DashBoardSeniorAppointment from "./pages/DashBoardSeniorAppointment";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import DashBoardCareGiver from "./pages/DashBoardCareGiver";
@@ -92,6 +95,18 @@ function App() {
           <Route path="/registration3" element={<Registration3 />} />
           <Route path="/dashboard-caregiver" element={<DashBoardCareGiver />} />
           <Route path="/dashboard-senior" element={<DashBoardSenior />} />
+          <Route
+            path="/dashboard-senior/find"
+            element={<DashBoardSeniorFind />}
+          />
+          <Route
+            path="/dashboard-senior/message"
+            element={<DashBoardSeniorMessage />}
+          />
+          <Route
+            path="/dashboard-senior/appointment"
+            element={<DashBoardSeniorAppointment />}
+          />
           <Route path="/logout" element={<Logout />} />
         </Routes>
       </Router>
