@@ -88,7 +88,7 @@ function App() {
           <Route path="/welcome" element={<Home2 />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registration1" element={<Registration1 />} />
-          <Route path="/registration2" element={<Registration2 />} />
+          {/* <Route path="/registration2" element={<Registration2 />} /> */}
           <Route path="/registration3" element={<Registration3 />} />
           <Route path="/dashboard-caregiver" element={<DashBoardCareGiver />} />
           <Route path="/dashboard-senior" element={<DashBoardSenior />} />
