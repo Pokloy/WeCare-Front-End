@@ -252,25 +252,6 @@ table {
   width: 10rem;
 }
 
-.square-place-holder {
-  background-color: #98cabe;
-  height: auto;
-  width: 10rem;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  /* Optional styling for button-like appearance */
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.square-place-holder:hover {
-  background-color: #76b09e; /* Darken the color on hover */
-  transform: scale(1.05); /* Slightly increase the size on hover */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for button effect */
-}
-
-
 .icon-custom {
   color: white;
   font-size: 5rem;
@@ -556,7 +537,7 @@ a {
   border-radius: 10px;
 }
 
-.active {
+.actives {
   background: #ffffff;
   border-radius: 0.5rem;
 }
@@ -627,8 +608,7 @@ a {
   color: #f0f0f0;
 }
 
-
-.modal {
+.modals {
   display: flex; /* Use flexbox for centering */
   position: fixed;
   z-index: 1000; /* Ensure the modal appears on top */
@@ -640,24 +620,22 @@ a {
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
 }
-
-.modal-content {
+.modal-contents {
   background-color: #fff; /* White background for content */
   padding: 20px; /* Spacing inside modal */
   border-radius: 5px; /* Rounded corners */
   width: max-content; /* Fixed width for modal */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
-
 .close {
   cursor: pointer; /* Pointer cursor for close button */
   float: right; /* Float close button to the right */
 }
-.sex-checkBox-container{
+.sex-checkBox-containers {
   display: flex;
   flex-direction: column;
 }
-.sex-checkBox{
+.sex-checkBoxs {
   display: flex;
 }
 .label-spacing{

@@ -1,24 +1,22 @@
-import Banner from "../components/Banner";
-import ProfileCard from "../components/ProfileCard";
-import SideMenu from "../components/SideMenu";
 import { useContext, useEffect, useState } from "react";
 import UserContext from "../UserContext";
+import SideMenu from "../components/SideMenu";
 import { Link, Navigate, NavLink } from "react-router-dom";
+import Find from "../components/Find";
 
-const DashBoardSenior = () => {
+const DashBoardSeniorFind = () => {
   const { user } = useContext(UserContext);
 
   return user.id === null ? (
     <Navigate to="/login" />
   ) : (
     <div>
-      <SideMenu activeHome={true} />
+      <SideMenu activeFind={true} />
       <div className=" nav-content shifted">
-        <Banner />
-        <ProfileCard />
+        <Find />
       </div>
     </div>
   );
 };
 
-export default DashBoardSenior;
+export default DashBoardSeniorFind;

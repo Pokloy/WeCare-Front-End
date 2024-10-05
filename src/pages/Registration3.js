@@ -173,8 +173,10 @@ export default function Registration3() {
               </div>
 
               <div className="form-group">
+
                 <input type="checkbox" className="mr-2" required/>
                 <label className="pb-2">I agree to the Terms & Conditions.</label>
+
               </div>
             </div>
             <button type="submit" className="btn btn-login">
@@ -195,14 +197,17 @@ export default function Registration3() {
 
 
 
+
       {/* Senior Citizen Modal */}
       {isSeniorModalOpen && (
         <div className="modal">
           <div className="modal-content d-block pt-4">
+
             <span className="close" onClick={closeSeniorModal}>
               &times;
             </span>
             <h2>Senior Application Form</h2>
+
             <form onSubmit={collectDataRegistration2}>
 
             <div className="d-flex mt-5">  
@@ -300,6 +305,8 @@ export default function Registration3() {
                         required/>
                         <label className="mt-2">(If Applicable)</label>
                     </div>
+                  </div>
+
 
                 </div> 
             </div> 
@@ -379,6 +386,7 @@ export default function Registration3() {
 
       {/* Caregiver Modal */}
       {isCaregiverModalOpen && (
+
         <div className="modal">
           <div className="modal-content d-block pt-4">
           <span className="close" onClick={closeCaregiverModal}>
@@ -464,6 +472,7 @@ export default function Registration3() {
                       value={initialData.contactNumber}
                       onChange={handleChange}
                       required/>
+
                 <input
                   type="number"
                   id="experienceId"
