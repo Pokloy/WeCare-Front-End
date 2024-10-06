@@ -13,7 +13,6 @@ export const getRegisteredData = (data)=>{
             experienceId: data.experienceId,
             password: data.password,
 
-            password: data.password,
             gender: data.gender,
             contactNumber: data.contactNumber,
             birthDate: data.birthDate

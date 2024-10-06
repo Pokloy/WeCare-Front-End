@@ -71,9 +71,12 @@ export default function Registration3() {
   
     const collectDataRegistration1 = (e) => {
         e.preventDefault();
-        console.log("Registered Data in Registration3:", initialData); 
+
         
 
+      
+
+        console.log("Registered Data in Registration3:", initialData); 
     }
 
 
@@ -133,7 +136,9 @@ export default function Registration3() {
 
                 {/* Senior button */}
                 <div
-                className={`${seniorButtonClass} p-2 m-2 d-flex flex-column align-items-center`}
+
+                className={`${seniorButtonClass} button-hover-effect p-2 m-2 d-flex flex-column align-items-center`}
+
                 onClick={openSeniorModal}
                 >
                 <span className="material-symbols-outlined icon-custom">
@@ -146,7 +151,8 @@ export default function Registration3() {
 
                 {/* Caregiver button */}
                 <div
-                className={`${caregiverButtonClass} p-2 m-2 d-flex flex-column align-items-center`}
+                className={`${caregiverButtonClass} button-hover-effect p-2 m-2 d-flex flex-column align-items-center`}
+
                 onClick={openCaregiverModal}
                 >
                 <span className="material-symbols-outlined icon-custom">
