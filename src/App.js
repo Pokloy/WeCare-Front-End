@@ -46,6 +46,7 @@ function App() {
   // this is where you generate the details of the user to be put in the global
   useEffect(() => {
     console.log(user);
+    console.log(`${process.env.REACT_APP_API_URL}/user-profile`)
     // fetch data from db
     fetch(`${process.env.REACT_APP_API_URL}/user-profile`, {
       headers: {
